@@ -35,6 +35,8 @@
 
     <jsp:include page="fragments/footer.jsp"/>
 
+    <img src="/resources/images/capgemini-logo.png"/>
+	
 </div>
 </body>
 
