@@ -1,10 +1,11 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<spring:url value="/resources/images/banner-graphic.png" var="banner"/>
-<img src="${banner}"/>
 
 <div class="navbar" style="width: 601px;">
+<spring:url value="/resources/images/capgemini.png" var="banner"/>
+<img src="${banner}"/>
+<img src="/resources/images/cloud.png"/>
     <div class="navbar-inner">
         <ul class="nav">
             <li style="width: 100px;"><a href="<spring:url value="/" htmlEscape="true" />"><i class="icon-home"></i>
