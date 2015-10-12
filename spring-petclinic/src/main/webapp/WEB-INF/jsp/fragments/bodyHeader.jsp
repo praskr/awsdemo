@@ -4,8 +4,8 @@
 
 <div class="navbar" style="width: 601px;">
 <spring:url value="/resources/images/capgemini.png" var="banner"/>
-<img src="${banner}" width="60%"/>
-<img src="/resources/images/cloud.png"  width="35%"/>
+<img src="${banner}" width="63%"/>
+<img src="/resources/images/cloud.png"  width="36%"/>
     <div class="navbar-inner">
         <ul class="nav">
             <li style="width: 100px;"><a href="<spring:url value="/" htmlEscape="true" />"><i class="icon-home"></i>
