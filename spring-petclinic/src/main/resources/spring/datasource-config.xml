@@ -24,7 +24,7 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
           p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.url}"
           p:username="${jdbc.username}" p:password="${jdbc.password}" 
-          p:testOnBorrow="True" p:testOnReturn="True" p:validationQuery="SELECT 1 from sampledb.employee;" />
+          p:testOnBorrow="True" p:testOnReturn="True" p:validationQuery="SELECT 1 from petclinic.owners;" />
 
     <!-- JNDI DataSource for JEE environments -->
     <!--
