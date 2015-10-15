@@ -21,6 +21,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.service.ClinicService;
@@ -89,24 +90,25 @@ public class OwnerController {
     public String processFindForm(Owner owner, BindingResult result, Model model) {
 
         // allow parameterless GET request for /owners to return all records
-        if (owner.getLastName() == null) {
+        if (owner.getLastName() == null && owner.getFirstName() == null) {
             owner.setLastName(""); // empty string signifies broadest possible search
+            owner.setFirstName(""); // empty string signifies broadest possible search
         }
         
         // find owners by last name
         Collection<Owner> results;
-        if(owner.getLastName().trim().isEmpty())
-        {
-        	 results = this.clinicService.findOwnerByLastName( owner.getLastName());
-        }
-        else{
-        	 List<String> param = new ArrayList<String>();
-             param.add( owner.getLastName());
-             results = this.clinicService.findOwnerByLastName( param);
+       if (StringUtils.isNotEmpty(owner.getLastName())){
+             results = this.clinicService.findOwnerByLastName( owner.getLastName());
+        } else if (StringUtils.isNotEmpty(owner.getFirstName())){
+             results = this.clinicService.findOwnerByFirstName( owner.getFirstName());
+        } else {
+        	// find all
+        	results = this.clinicService.findOwners();
         }
         if (results.size() < 1) {
             // no owners found
             result.rejectValue("lastName", "notFound", "not found");
+            result.rejectValue("firstName", "notFound", "not found");
             return "owners/findOwners";
         }
         if (results.size() > 1) {

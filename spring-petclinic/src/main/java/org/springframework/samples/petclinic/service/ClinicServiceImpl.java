@@ -78,15 +78,15 @@ public class ClinicServiceImpl implements ClinicService {
     @Override
     @Transactional(readOnly = true, timeout = 60)
     @ReadThroughSingleCache( namespace="Owner", expiration = 300)
-    public List<Owner> findOwnerByLastName(@ParameterValueKeyProvider List<String> lastName) throws DataAccessException {
-    	return (List<Owner>) ownerRepository.findByLastName( lastName.get(0));
+    public List<Owner> findOwnerByLastName(String lastName) throws DataAccessException {
+    	return (List<Owner>) ownerRepository.findByLastName( lastName);
     }
 
     @Override
     @Transactional(readOnly = true, timeout = 60)
     @ReadThroughAssignCache(namespace="OwnersAll" , assignedKey ="0", expiration = 300)
-    public List<Owner> findOwnerByLastName(String lastName) throws DataAccessException {
-    	return (List<Owner>) ownerRepository.findByLastName( lastName);
+    public List<Owner> findOwners() throws DataAccessException {
+    	return (List<Owner>) ownerRepository.findAll();
     }
     
     @Override
@@ -131,5 +131,13 @@ public class ClinicServiceImpl implements ClinicService {
     public void savePet(Pet pet) throws DataAccessException {
         petRepository.save(pet);
     }
+
+    @Override
+    @Transactional(readOnly = true, timeout = 60)
+    @ReadThroughAssignCache(namespace="Owner" , expiration = 300)
+	public Collection<Owner> findOwnerByFirstName(String firstName)
+			throws DataAccessException {
+    	return (List<Owner>) ownerRepository.findByFirstName( firstName);
+	}
 
 }

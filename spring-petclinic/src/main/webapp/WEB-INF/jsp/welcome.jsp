@@ -18,11 +18,6 @@
 
        
 	<ul>
-	  <li>
-      	<p><u> 
-      		<a href="http://aka.ms/JavaAzureTutorial"><fmt:message key="tutorialDecription.link"/></a>
-      	</u></p>
-      </li>
 	  <li> 
 	  	<p><u> 
       		<a href="https://github.com/Logic2020Inc/spring-petclinic-mod"> <fmt:message key="documentationDecription.link"/></a>
