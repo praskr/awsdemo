@@ -19,7 +19,6 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
@@ -34,14 +33,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.google.code.ssm.api.InvalidateAssignCache;
-import com.google.code.ssm.api.InvalidateMultiCache;
 import com.google.code.ssm.api.InvalidateSingleCache;
 import com.google.code.ssm.api.ParameterValueKeyProvider;
 import com.google.code.ssm.api.ReadThroughAssignCache;
-import com.google.code.ssm.api.ReadThroughMultiCache;
-import com.google.code.ssm.api.ReadThroughMultiCacheOption;
 import com.google.code.ssm.api.ReadThroughSingleCache;
-import com.google.code.ssm.api.UpdateAssignCache;
  
 
 /**
@@ -134,10 +129,8 @@ public class ClinicServiceImpl implements ClinicService {
 
     @Override
     @Transactional(readOnly = true, timeout = 60)
-    @ReadThroughAssignCache(namespace="Owner" , expiration = 300)
-	public Collection<Owner> findOwnerByFirstName(String firstName)
-			throws DataAccessException {
+    public List<Owner> findOwnerByFirstName(String firstName) throws DataAccessException {
+    	System.out.println("ClinicService.findOwnerByFirstName :"+firstName);
     	return (List<Owner>) ownerRepository.findByFirstName( firstName);
-	}
-
+    }
 }

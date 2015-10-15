@@ -103,12 +103,11 @@ public class OwnerController {
              results = this.clinicService.findOwnerByFirstName( owner.getFirstName());
         } else {
         	// find all
-        	results = this.clinicService.findOwners();
+        	results = this.clinicService.findOwnerByLastName("");
         }
         if (results.size() < 1) {
             // no owners found
             result.rejectValue("lastName", "notFound", "not found");
-            result.rejectValue("firstName", "notFound", "not found");
             return "owners/findOwners";
         }
         if (results.size() > 1) {
