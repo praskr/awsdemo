@@ -78,6 +78,7 @@ public class JpaOwnerRepositoryImpl implements OwnerRepository {
     @Override
     @SuppressWarnings("unchecked")
     public Collection<Owner> findByFirstName(String firstName) {
+    	System.out.println("JPARepo :"+firstName);
         // using 'join fetch' because a single query should load both owners and pets
         // using 'left join fetch' because it might happen that an owner does not have pets yet
         Query query = this.em.createQuery("SELECT DISTINCT owner FROM Owner owner left join fetch owner.pets WHERE owner.firstName LIKE :firstName");

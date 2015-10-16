@@ -131,6 +131,7 @@ public class ClinicServiceImpl implements ClinicService {
     @Transactional(readOnly = true, timeout = 60)
     public List<Owner> findOwnerByFirstName(String firstName) throws DataAccessException {
     	System.out.println("ClinicService.findOwnerByFirstName :"+firstName);
+    	System.out.println("ClinicService.ownerRepository:"+ownerRepository);
     	return (List<Owner>) ownerRepository.findByFirstName( firstName);
     }
 }

@@ -166,6 +166,7 @@ public class JdbcOwnerRepositoryImpl implements OwnerRepository {
 
     @Override
     public Collection<Owner> findByFirstName(String firstName) throws DataAccessException {
+    	System.out.println("JdbcRepo :"+firstName);
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("firstName", firstName + "%");
         List<Owner> owners = this.namedParameterJdbcTemplate.query(
