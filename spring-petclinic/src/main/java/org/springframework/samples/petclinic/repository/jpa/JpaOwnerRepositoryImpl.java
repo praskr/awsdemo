@@ -84,7 +84,6 @@ public class JpaOwnerRepositoryImpl implements OwnerRepository {
         Query query = this.em.createQuery("SELECT DISTINCT owner FROM Owner owner left join fetch owner.pets WHERE owner.firstName LIKE :firstName");
         query.setParameter("firstName", firstName + "%");
         Collection<Owner> owners = query.getResultList();
-        System.out.println("JPARepo owners:"+owners.size());
         return owners;
     }
     

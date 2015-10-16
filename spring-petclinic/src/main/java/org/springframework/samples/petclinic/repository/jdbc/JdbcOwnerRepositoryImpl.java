@@ -174,7 +174,6 @@ public class JdbcOwnerRepositoryImpl implements OwnerRepository {
                 params,
                 ParameterizedBeanPropertyRowMapper.newInstance(Owner.class)
         );
-        System.out.println("JdbcRepo owners:"+owners.size());
         loadOwnersPetsAndVisits(owners);
         return owners;
     }
