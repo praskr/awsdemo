@@ -190,4 +190,18 @@ public class JdbcOwnerRepositoryImpl implements OwnerRepository {
         loadOwnersPetsAndVisits(owners);
         return owners;
     }
+    
+    @Override
+    public Collection<Owner> findByCity(String city) throws DataAccessException {
+    	System.out.println("JdbcRepo :"+city);
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("city", city + "%");
+        List<Owner> owners = this.namedParameterJdbcTemplate.query(
+                "SELECT id, first_name, last_name, address, city, telephone FROM owners WHERE city like :city",
+                params,
+                ParameterizedBeanPropertyRowMapper.newInstance(Owner.class)
+        );
+        loadOwnersPetsAndVisits(owners);
+        return owners;
+    }
 }

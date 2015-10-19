@@ -15,9 +15,7 @@
  */
 package org.springframework.samples.petclinic.web;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import javax.validation.Valid;
 
@@ -90,17 +88,17 @@ public class OwnerController {
     public String processFindForm(Owner owner, BindingResult result, Model model) {
 
         // allow parameterless GET request for /owners to return all records
-        if (owner.getLastName() == null && owner.getFirstName() == null) {
+        if (owner.getLastName() == null && owner.getCity() == null) {
             owner.setLastName(""); // empty string signifies broadest possible search
-            owner.setFirstName(""); // empty string signifies broadest possible search
+            owner.setCity(""); // empty string signifies broadest possible search
         }
         
         // find owners by last name
         Collection<Owner> results;
        if (StringUtils.isNotEmpty(owner.getLastName())){
              results = this.clinicService.findOwnerByLastName( owner.getLastName());
-        } else if (StringUtils.isNotEmpty(owner.getFirstName())){
-             results = this.clinicService.findOwnerByFirstName( owner.getFirstName());
+        } else if (StringUtils.isNotEmpty(owner.getCity())){
+             results = this.clinicService.findOwnerByCity( owner.getCity());
         } else {
         	// find all
         	results = this.clinicService.findOwnerByLastName("");

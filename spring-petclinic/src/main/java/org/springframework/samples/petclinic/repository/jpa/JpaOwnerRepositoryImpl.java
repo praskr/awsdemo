@@ -95,4 +95,16 @@ public class JpaOwnerRepositoryImpl implements OwnerRepository {
         Query query = this.em.createQuery("SELECT DISTINCT owner FROM Owner owner left join fetch owner.pets");
         return query.getResultList();
     }
+    
+    @Override
+    @SuppressWarnings("unchecked")
+    public Collection<Owner> findByCity(String city) {
+    	System.out.println("JPARepo :"+city);
+        // using 'join fetch' because a single query should load both owners and pets
+        // using 'left join fetch' because it might happen that an owner does not have pets yet
+        Query query = this.em.createQuery("SELECT DISTINCT owner FROM Owner owner left join fetch owner.pets WHERE owner.city LIKE :city");
+        query.setParameter("city", city + "%");
+        Collection<Owner> owners = query.getResultList();
+        return owners;
+    }
 }

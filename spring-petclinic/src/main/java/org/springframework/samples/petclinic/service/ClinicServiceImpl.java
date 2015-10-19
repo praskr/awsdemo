@@ -133,4 +133,11 @@ public class ClinicServiceImpl implements ClinicService {
     	System.out.println("ClinicService.ownerRepository:"+ownerRepository);
     	return (List<Owner>) ownerRepository.findByFirstName( firstName);
     }
+    
+    @Override
+    @Transactional(readOnly = true, timeout = 60)
+    public List<Owner> findOwnerByCity(String city) throws DataAccessException {
+    	System.out.println("ClinicService.ownerRepository:"+ownerRepository);
+    	return (List<Owner>) ownerRepository.findByCity( city);
+    }
 }

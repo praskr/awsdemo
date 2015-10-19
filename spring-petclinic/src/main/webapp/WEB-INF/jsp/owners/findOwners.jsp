@@ -19,14 +19,14 @@
     <form:form modelAttribute="owner" action="${fn:escapeXml(formUrl)}" method="get" class="form-horizontal"
                id="search-owner-form">
         <fieldset>
-            <!-- div class="control-group" id="lastName">
+            <div class="control-group" id="lastName">
                 <label class="control-label">Last name </label>
                 <form:input path="lastName" size="30" maxlength="80"/>
                 <span class="help-inline"><form:errors path="*"/></span>
-            </div -->
-            <div class="control-group" id="firstName">
-                <label class="control-label">First name </label>
-                <form:input path="firstName" size="30" maxlength="80"/>
+            </div>
+            <div class="control-group" id="city">
+                <label class="control-label">City </label>
+                <form:input path="city" size="30" maxlength="80"/>
                 <span class="help-inline"><form:errors path="*"/></span>
             </div>
             <div class="form-actions">

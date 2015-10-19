@@ -31,7 +31,6 @@
 package org.springframework.samples.petclinic.repository;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.BaseEntity;
@@ -80,4 +79,6 @@ public interface OwnerRepository {
 	Collection<Owner>  findByFirstName(String firstName) throws DataAccessException;
 
 	Collection<Owner> findAll() throws DataAccessException;
+	
+	Collection<Owner>  findByCity(String city) throws DataAccessException;
 }

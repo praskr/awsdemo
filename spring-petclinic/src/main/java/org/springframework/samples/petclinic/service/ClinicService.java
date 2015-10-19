@@ -55,4 +55,6 @@ public interface ClinicService {
  
 
 	Collection<Owner> findOwnerByFirstName(String firstName) throws DataAccessException;
+	
+	Collection<Owner> findOwnerByCity(String city) throws DataAccessException;
 }
