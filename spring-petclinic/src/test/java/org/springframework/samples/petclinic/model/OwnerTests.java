@@ -18,6 +18,9 @@ package org.springframework.samples.petclinic.model;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import java.util.List;
+
+import org.joda.time.DateTime;
 import org.junit.Test;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,4 +44,45 @@ public class OwnerTests {
         assertEquals(fido, owner.getPet("fido"));
     }
 
+    @Test
+    @Transactional
+    public void addPet() {
+        Owner owner = new Owner();
+        Pet fido = new Pet();
+        fido.setName("Fido2");
+        owner.addPet(fido);
+        assertEquals(fido, owner.getPet("Fido2"));
+        assertNull(owner.getPet("Lido"));
+    }
+    
+    @Test
+    @Transactional
+    public void getPets() {
+        Owner owner = new Owner();
+        owner.setFirstName("Maria");
+        Pet fido1 = new Pet();
+        fido1.setName("Fido1");
+        owner.addPet(fido1);
+        Pet fido2 = new Pet();
+        fido2.setName("Fido2");
+        owner.addPet(fido2);
+        List<Pet> pets = owner.getPets();
+        for(Pet p : pets) {
+        	assertEquals("Maria", p.getOwner().getFirstName());
+        }
+    }
+
+    @Test
+    @Transactional
+    public void addVisit() {
+        Owner owner = new Owner();
+        Pet fido = new Pet();
+        fido.setName("Fido");
+        Visit v = new Visit();
+        v.setDate(new DateTime());
+        v.setDescription("Leg Enjury");
+        fido.addVisit(v);
+        owner.addPet(fido);
+        assertEquals(v.getDescription(), owner.getPet("Fido").getVisits().get(0).getDescription());
+    }
 }
