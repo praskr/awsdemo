@@ -24,13 +24,13 @@
                 <form:input path="lastName" size="30" maxlength="80"/>
                 <span class="help-inline"><form:errors path="*"/></span>
             </div>
-            <!--
+            
             <div class="control-group" id="city">
                 <label class="control-label">City </label>
                 <form:input path="city" size="30" maxlength="80"/>
                 <span class="help-inline"><form:errors path="*"/></span>
             </div>
-	-->
+	
             <div class="form-actions">
                 <button type="submit">Find Owner</button>
             </div>
