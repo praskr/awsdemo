@@ -1,15 +1,11 @@
 <!doctype html>
 
 <!--
-
     Welcome to the light side of the source, young padawan.
-
     One step closer to learn something interesting you are...
-
 -->
 
 <!--
-    
     So you'd like to know how to use impress.js?
     
     You've made the first, very important step - you're reading the source code.
@@ -23,7 +19,6 @@
     So...
     
     Would you still like to know how to use impress.js?
-    
 -->
 
 <html lang="en">
@@ -31,7 +26,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Cloud choice</title>
+    <title>Cloud Choice - Capgemini</title>
     
     <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
     <meta name="author" content="Bartek Szopka" />
@@ -39,7 +34,6 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
 
     <!--
-        
         Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
         presentation to work.
         
@@ -51,7 +45,6 @@
         do we?
         
         When creating your own presentation get rid of this file. Start from scratch, it's fun!
-        
     -->
     <link href="css/impress-demo.css" rel="stylesheet" />
     
@@ -60,7 +53,6 @@
 </head>
 
 <!--
-    
     Body element is used by impress.js to set some useful class names, that will allow you to detect
     the support and state of the presentation in CSS or other scripts.
     
@@ -75,20 +67,16 @@
     
     The class name on body element also depends on currently active presentation step. More details about
     it can be found later, when `hint` element is being described.
-    
 -->
 <body class="impress-not-supported">
 
-<!--
-    For example this fallback message is only visible when there is `impress-not-supported` class on body.
--->
+<!-- For example this fallback message is only visible when there is `impress-not-supported` class on body. -->
 <div class="fallback-message">
-    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>Your browser <b>doesn't support the required features</b>, so you are presented with a simplified version of this presentation.</p>
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
 </div>
 
 <!--
-    
     Now that's the core element used by impress.js.
     
     That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
@@ -106,12 +94,9 @@
     
     But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
     right around the corner of this tag ;)
-    
 -->
 <div id="impress">
-
     <!--
-        
         Here is where interesting thing start to happen.
         
         Each step of the presentation should be an element inside the `#impress` with a class name
@@ -125,10 +110,8 @@
         will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
         
         It will not be rotated or scaled.
-        
     -->
     <!--
-        
         The `id` attribute of the step element is used to identify it in the URL, but it's optional.
         If it is not defined, it will get a default value of `step-N` where N is a number of slide.
         
@@ -140,43 +123,47 @@
         
         Please note, that while `#/step-2` (with slash) would also work in a link it's not recommended.
         Using classic `id`-based links like `#step-2` makes these links usable also in fallback mode.
-        
     -->
-	
+	<!-- First row -->
     <div id="slide1" class="step slide" data-x="-500" data-y="-1500" data-scale="1.5">
         <img src="img/slide1.jpg" height="100%" width="100%" />
     </div>
 
-    <div id="slide2" class="step slide" data-x="1000" data-y="-1500">
-        <img src="img/slide2.jpg" height="100%" width="100%" />
+    <div class="step slide" data-x="1000" data-y="-1500">
+        <img src="img/slide2.jpg" height="100%" width="100%" usemap="#slide2" />
+		<map name="slide2">
+		  <area shape="rect" coords="20,270,350,320" alt="WorldWideAccess" href="index.html#/WorldWideAccess" >
+		  <area shape="rect" coords="480,126,840,211" alt="LeastMaintenance" href="index.html#/LeastMaintenance" >
+		  <area shape="rect" coords="500,356,850,430" alt="SecurityCompliance" href="index.html#/SecurityCompliance" >
+		  <area shape="rect" coords="480,550,820,620" alt="TimeToMarket" href="index.html#/TimeToMarket" >
+		</map>
     </div>
 
-    <div id="slide2-1" class="step slide" data-x="2000" data-y="-1500">
+    <div id="WorldWideAccess" class="step slide" data-x="2000" data-y="-1500">
 		<img src="img/slide2-1.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide2-2" class="step slide" data-x="3000" data-y="-1500">
+	<div class="step slide" data-x="3000" data-y="-1500">
 		<img src="img/slide2-2.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide2-3" class="step slide" data-x="4000" data-y="-1500">
+	<div id="SecurityCompliance" class="step slide" data-x="4000" data-y="-1500">
 		<img src="img/slide2-3.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide2-4" class="step slide" data-x="5000" data-y="-1500">
+	<div id="LeastMaintenance" class="step slide" data-x="5000" data-y="-1500">
 		<img src="img/slide2-4.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide2-5" class="step slide" data-x="6000" data-y="-1500">
+	<div id="TimeToMarket" class="step slide" data-x="6000" data-y="-1500">
 		<img src="img/slide2-5.jpg" height="100%" width="100%" />
     </div>
 
     <!--
-        
         This is an example of step element being scaled.
         
         Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
         element will be 4 times larger than the others.
         From presentation and transitions point of view it means, that it will have to be scaled
         down (4 times) to make it back to its correct size.
-        
     -->
+	<!-- Second row -->
     <div id="title" class="step slide" data-x="2000" data-y="0">
         <img src="img/slide9.jpg" height="100%" width="100%" />
     </div>
@@ -184,76 +171,80 @@
         <img src="img/slide10.jpg" height="100%" width="100%" />
     </div>
 	
-	<div id="slide11" class="step slide" data-x="-3500" data-y="1500" data-scale="1.5">
-        <img src="img/slide11.jpg" height="100%" width="100%" />
+	<!-- Third row -->
+	<div class="step slide" data-x="-3500" data-y="1500" data-scale="1.5">
+        <img src="img/slide11.jpg" height="100%" width="100%" usemap="#slide11" />
+		<map name="slide11">
+		  <area shape="rect" coords="0,0,900,110" alt="CloudMigrationAssessment" href="index.html#/CloudMigrationAssessment" >
+		  <area shape="rect" coords="370,150,570,390" alt="CCAQuestion" href="index.html#/CCAQuestion" >
+		  <area shape="rect" coords="370,400,570,620" alt="PortFolio" href="index.html#/PortFolio" >
+		</map>
     </div>
-	<div id="slide11-1" class="step slide" data-x="-2000" data-y="1500">
+	<div id="CloudMigrationAssessment" class="step slide" data-x="-2000" data-y="1500">
 		<img src="img/slide11-1.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide11-2" class="step slide" data-x="-1000" data-y="1500">
+	<div class="step slide" data-x="-1000" data-y="1500">
 		<img src="img/slide11-2.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide11-3" class="step slide" data-x="0" data-y="1500">
+	<div class="step slide" data-x="0" data-y="1500">
 		<img src="img/slide11-3.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide11-4" class="step slide" data-x="1000" data-y="1500">
+	<div class="step slide" data-x="1000" data-y="1500">
 		<img src="img/slide11-4.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide11-5" class="step slide" data-x="2000" data-y="1500">
+	<div id="CCAQuestion" class="step slide" data-x="2000" data-y="1500">
 		<img src="img/slide11-5.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide11-6" class="step slide" data-x="3000" data-y="1500">
-		<img src="img/slide11-6.jpg" height="100%" width="100%" />
+	<div class="step slide" data-x="3000" data-y="1500">
+		<img src="img/slide11-6.jpg" height="100%" width="100%" usemap="#slide11-6" />
+		<map name="slide11-6">
+		  <area shape="rect" coords="20,150,290,200" alt="CCAToolMap" target="_blank" href="http://ccatool-capgemini.elasticbeanstalk.com/" >
+		</map>
     </div>
-	<div id="slide11-7" class="step slide" data-x="4000" data-y="1500">
-		<img src="img/slide11-7.jpg" height="100%" width="100%" />
+	<div class="step slide" data-x="4000" data-y="1500">
+		<img src="img/slide11-7.jpg" height="100%" width="100%" usemap="#slide11-7" />
+		<map name="slide11-7">
+		  <area shape="rect" coords="20,150,290,200" alt="GoogleForm" target="_blank" href="https://docs.google.com/forms/d/1__kVoFt6LPESTCxjib7aQPfOaJvJXNyBU3Tzbdxn3ng/edit?usp=forms_home" >
+		</map>
     </div>
-	<div id="slide11-8" class="step slide" data-x="5000" data-y="1500">
+	<div class="step slide" data-x="5000" data-y="1500">
 		<img src="img/slide11-8.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide11-9" class="step slide" data-x="6000" data-y="1500">
+	<div class="step slide" data-x="6000" data-y="1500">
 		<img src="img/slide11-9.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide11-10" class="step slide" data-x="7000" data-y="1500">
+	<div id="PortFolio" class="step slide" data-x="7000" data-y="1500">
 		<img src="img/slide11-10.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide11-11" class="step slide" data-x="8000" data-y="1500">
+	<div class="step slide" data-x="8000" data-y="1500">
 		<img src="img/slide11-11.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide11-12" class="step slide" data-x="9000" data-y="1500">
+	<div class="step slide" data-x="9000" data-y="1500">
 		<img src="img/slide11-12.jpg" height="100%" width="100%" />
     </div>
+
     <!--
-        
         This element introduces rotation.
-        
         Notation shouldn't be a surprise. We use `data-rotate="90"` attribute, meaning that this
         element should be rotated by 90 degrees clockwise.
-        
     -->
 	<!--div id="its" class="step" data-x="850" data-y="4000" data-rotate="90" data-scale="5">
-        <img src="img/slide24.jpg" height="100%" width="100%" />
     </div-->
-
     <!--div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
-        <img src="img/slide11.jpg" height="100%" width="100%" />
     </div-->
 
     <!--
-        
         And now it gets really exciting! We move into third dimension!
         
         Along with `data-x` and `data-y`, you can define the position on third (Z) axis, with
         `data-z`. In the example below we use `data-z="-3000"` meaning that element should be
         positioned far away from us (by 3000px).
-        
     -->
     <!--div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
         <img src="img/slide8.jpg" height="100%" width="100%" />
     </div-->
 
     <!--
-        
         This step here doesn't introduce anything new when it comes to data attributes, but you
         should notice in the demo that some words of this text are being animated.
         It's a very basic CSS transition that is applied to the elements when this step element is
@@ -270,77 +261,94 @@
         
         So basically every step element has one of three classes: `future`, `present` and `past`.
         Only one current step has the `present` class.
-        
     -->
     <!--div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
-        <img src="img/slide11-1.jpg" height="100%" width="100%" />
     </div>
-
     <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <img src="img/slide11-2.jpg" height="100%" width="100%" />
     </div>
-
     <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <img src="img/slide11-3.jpg" height="100%" width="100%" />
     </div-->
 
-    <div id="one-more-thing" class="step slide" data-x="-3500" data-y="3000" data-scale="1.5">
-        <img src="img/slide24.jpg" height="100%" width="100%" />
+	<!-- Fourth row -->
+    <div class="step slide" data-x="-3500" data-y="3000" data-scale="1.5">
+        <img src="img/slide24.jpg" height="100%" width="100%" usemap="#slide24"/>
+		<map name="slide24">
+		  <area shape="rect" coords="0,0,900,110" alt="CaseStudyPostNL" href="index.html#/CaseStudyPostNL" >
+		  <area shape="rect" coords="20,150,890,200" alt="FactoryLayoutFlow" href="index.html#/FactoryLayoutFlow" >
+		  <area shape="rect" coords="20,260,120,530" alt="MigrationPattern" href="index.html#/MigrationPattern" >
+		  <area shape="rect" coords="190,280,320,500" alt="DesignDecision" href="index.html#/DesignDecision" >
+		  <area shape="rect" coords="400,280,520,470" alt="Tools" href="index.html#/Tools" >
+		  <area shape="rect" coords="530,280,610,470" alt="Testing" href="index.html#/Testing" >
+		  <area shape="rect" coords="20,550,890,640" alt="DevOps" href="index.html#/DevOps" >
+		</map>
     </div>
 	
-	<div id="slide24-1" class="step slide" data-x="-2000" data-y="3000">
+	<div id="CaseStudyPostNL" class="step slide" data-x="-2000" data-y="3000">
 		<img src="img/slide24-1.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-2" class="step slide" data-x="-1000" data-y="3000">
+	<div class="step slide" data-x="-1000" data-y="3000">
 		<img src="img/slide24-2.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-3" class="step slide" data-x="0" data-y="3000">
+	<div class="step slide" data-x="0" data-y="3000">
 		<img src="img/slide24-3.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-4" class="step slide" data-x="1000" data-y="3000">
+	<div class="step slide" data-x="1000" data-y="3000">
 		<img src="img/slide24-4.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-5" class="step slide" data-x="2000" data-y="3000">
+	<div class="step slide" data-x="2000" data-y="3000">
 		<img src="img/slide24-5.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-6" class="step slide" data-x="3000" data-y="3000">
+	<div class="step slide" data-x="3000" data-y="3000">
 		<img src="img/slide24-6.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-7" class="step slide" data-x="4000" data-y="3000">
+	<div id="FactoryLayoutFlow" class="step slide" data-x="4000" data-y="3000">
 		<img src="img/slide24-7.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-8" class="step slide" data-x="5000" data-y="3000">
+	<div class="step slide" data-x="5000" data-y="3000">
 		<img src="img/slide24-8.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-9" class="step slide" data-x="6000" data-y="3000">
+	<div id="MigrationPattern" class="step slide" data-x="6000" data-y="3000">
 		<img src="img/slide24-9.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-10" class="step slide" data-x="7000" data-y="3000">
+	<div id="DesignDecision" class="step slide" data-x="7000" data-y="3000">
 		<img src="img/slide24-10.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-11" class="step slide" data-x="8000" data-y="3000">
-		<img src="img/slide24-11.jpg" height="100%" width="100%" />
+	<div id="Tools" class="step slide" data-x="8000" data-y="3000">
+		<img src="img/slide24-11.jpg" height="100%" width="100%" usemap="#slide24-11" />
+		<map name="slide24-11">
+		  <area shape="rect" coords="260,150,820,200" alt="CCAToolMap" target="_blank" href="http://ccatool-capgemini.elasticbeanstalk.com/" >
+		</map>
     </div>
-	<div id="slide24-12" class="step slide" data-x="9000" data-y="3000">
+	<div id="Testing" class="step slide" data-x="9000" data-y="3000">
 		<img src="img/slide24-12.jpg" height="100%" width="100%" />
     </div>
-	<div id="slide24-13" class="step slide" data-x="10000" data-y="3000">
+	<div id="DevOps" class="step slide" data-x="10000" data-y="3000">
 		<img src="img/slide24-13.jpg" height="100%" width="100%" />
     </div>
 
-	
+	<!-- Fifth row -->
 	<div class="step slide" data-x="1500" data-y="4500" data-scale="1.5">
-        <img src="img/slide38.jpg" height="100%" width="100%" />
+        <img src="img/slide38.jpg" height="100%" width="100%" usemap="#slide38" />
+		<map name="slide38">
+		  <area shape="rect" coords="400,240,500,310" alt="MicrosoftAzure" href="index.html#/CSBPortal" >
+		  <area shape="rect" coords="400,380,500,450" alt="SkySightPortal" href="index.html#/SkySightPortal" >
+		  <area shape="rect" coords="400,465,500,530" alt="Amazon" href="index.html#/CSBPortal" >
+		</map>
     </div>
-	<div id="slide38-1" class="step slide" data-x="3000" data-y="4500">
-		<img src="img/slide38-1.jpg" height="100%" width="100%" />
+	<div id="CSBPortal" class="step slide" data-x="3000" data-y="4500">
+		<img src="img/slide38-1.jpg" height="100%" width="100%" usemap="#slide38-1" />
+		<map name="slide38-1">
+		  <area shape="rect" coords="20,150,290,200" alt="CSBPortal" target="_blank" href="https://cm01-brokering.cloudservices.capgemini.com/index-userapp.jsp" >
+		</map>
     </div>
-	<div id="slide38-2" class="step slide" data-x="4000" data-y="4500">
-		<img src="img/slide38-2.jpg" height="100%" width="100%" />
+	<div id="SkySightPortal" class="step slide" data-x="4000" data-y="4500">
+		<img src="img/slide38-2.jpg" height="100%" width="100%" usemap="#slide38-2" />
+		<map name="slide38-2">
+		  <area shape="rect" coords="20,150,290,200" alt="SkySightPortal" target="_blank" href="https://cm01-portal.cloudservices.capgemini.com/index.html" >
+		</map>
     </div>
 	
     <!--
-        
         And the last one shows full power and flexibility of impress.js.
         
         You can not only position element in 3D, but also rotate it around any axis.
@@ -349,15 +357,14 @@
         
         You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
         as `data-rotate` (these two are basically aliases).
-        
     -->
+	<!-- Last slide in 3D -->
     <div id="its-in-3d" class="step" data-x="6500" data-y="4800" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
         <img src="img/slide41.jpg" height="100%" width="100%" />
         <span class="footnote">Cloud choice | November 2015</span>
     </div>
 
-    <!--
-        
+    <!--       
         So to summarize of all the possible attributes used to position presentation steps, we have:
         
         * `data-x`, `data-y`, `data-z` - they define the position of **the center** of step element on
@@ -369,15 +376,14 @@
         
         These values are used by impress.js in CSS transformation functions, so for more information consult
         CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
-        
     -->
+	<!-- Overview page -->
     <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
     </div>
 
 </div>
 
 <!--
-    
     Hint is not related to impress.js in any way.
     
     But it can show you how to use impress.js features in creative way.
@@ -398,10 +404,9 @@
     probably just hidden somewhere in HTML - not hard-coded in the script.
     
     Just sayin' ;)
-    
 -->
 <div class="hint">
-    <p>Use a spacebar or arrow keys to navigate</p>
+    <p>Use a spacebar or arrow keys or mouse to navigate</p>
 </div>
 <script>
 if ("ontouchstart" in document.documentElement) { 
@@ -410,7 +415,6 @@ if ("ontouchstart" in document.documentElement) {
 </script>
 
 <!--
-    
     Last, but not least.
     
     To make all described above really work, you need to include impress.js in the page.
@@ -422,13 +426,11 @@ if ("ontouchstart" in document.documentElement) {
     And you should do it in the end of your document. Not only because it's a good practice, but also
     because it should be done when the whole document is ready.
     Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
-    
 -->
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
 
 <!--
-    
     The `impress()` function also gives you access to the API that controls the presentation.
     
     Just store the result of the call:
@@ -449,10 +451,7 @@ if ("ontouchstart" in document.documentElement) {
     
     For some example uses of this API check the last part of the source of impress.js where the API
     is used in event handlers.
-    
 -->
 
 </body>
 </html>
-
-
