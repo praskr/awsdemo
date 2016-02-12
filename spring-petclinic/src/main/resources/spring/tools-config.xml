@@ -54,7 +54,7 @@
         <property name="configLocation" value="classpath:ehcache.xml"/>
     </bean>
 
-	<bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
+	<!-- bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
           <property name="cacheClientFactory">
                 <bean class="com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl" />
           </property>
@@ -68,6 +68,6 @@
                       <property name="consistentHashing" value="true" />
                 </bean>
           </property>
-     </bean>
+     </bean> -->
 
 </beans>
