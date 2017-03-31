@@ -54,13 +54,13 @@
         <property name="configLocation" value="classpath:ehcache.xml"/>
     </bean>
 
-	<!-- bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
+	<bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
           <property name="cacheClientFactory">
                 <bean class="com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl" />
           </property>
           <property name="addressProvider">
                 <bean class="com.google.code.ssm.config.DefaultAddressProvider">
-                     <property name="address" value="pub-memcache-13934.us-west-2-1.1.ec2.garantiadata.com:13934" />
+                     <property name="address" value="127.0.0.1:11211" />
                 </bean>
           </property>
           <property name="configuration">
@@ -68,6 +68,6 @@
                       <property name="consistentHashing" value="true" />
                 </bean>
           </property>
-     </bean> -->
+     </bean>
 
 </beans>
